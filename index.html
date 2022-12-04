@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+
+    .container {
+      width: 700px;
+      margin: 0 auto;
+    }
+
+    .slide_wraper {
+      border: 2px solid black;
+      position: relative;
+      width: 660px;
+      margin: 0 auto;
+      overflow-x: scroll;
+      padding-top: 200px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      cursor: default;
+    }
+    .slide_wraper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slides {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      height: 200px;
+      display: flex;
+      pointer-events: none;
+    }
+
+    .slides.animated {
+      transition: 0.5s ease-in-out;
+    }
+
+    .slides li {
+      text-align: center;
+      width: 200px;
+      height: 200px;
+      margin: 0 10px;
+      background-color: aquamarine;
+      /* position: absolute; */
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .controls span {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      margin: 0 10px 10px;
+      display: inline-block;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+    }
+    @media (max-width: 664px) {
+      .container {
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+      .slide_wraper {
+        width: 100%;
+      }
+      .container {
+        /* width: 500px; */
+        margin: 50px auto 0;
+      }
+    }
+
+    @media (max-width: 550px) {
+      body {
+        background-color: aquamarine;
+      }
+      .slides {
+        background-color: coral;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="slide_wraper">
+        <ul class="slides">
+          <li><img src="./cat01.jpg" />slide 01</li>
+          <li><img src="./cat02.jpg" />slide 02</li>
+          <li><img src="./cat03.jpg" />slide 03</li>
+        </ul>
+        <p class="controls">
+          <span class="prev">prev</span>
+          <span class="next">next</span>
+        </p>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
